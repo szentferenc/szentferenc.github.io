@@ -1,2 +1,2 @@
 # szentferenc.github.io
-Információs weboldal oldal Assisi Szent Ferencről
+Információs weboldal Assisi Szent Ferencről
