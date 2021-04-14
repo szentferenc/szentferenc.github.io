@@ -1,5 +1,4 @@
 :root {
-	/* --kiemelt: #ff9000; */
 	--kiemelt: #D4994C;
 	--fekete: #382e21;
 	--fekete-vil: #614523;
@@ -12,7 +11,7 @@
 	font-family: "Rajdhani";
 }
 body {
-	background-image: url("bgpattern.jpg");
+	background-image: url("img/bgpattern.jpg");
 	background-repeat: repeat;
 	background-size: auto 100vh;
 }
@@ -198,7 +197,6 @@ button:hover img {
 }
 #szovegek-container #keptar #fokep-container {
 	display: block;
-	/* vertical-align: middle; */
 	text-align: center;
 	width: 80%;
 	height: 95%;
@@ -241,6 +239,7 @@ button:hover img {
 	margin: 3vh -21vh 3vh 5vh;
 	box-shadow: 0px 0px 13px var(--fekete);
 	max-height: 55vh;
+	max-width: 70%;
 }
 #szovegek button {
 	position: sticky;
@@ -263,11 +262,12 @@ button:hover img {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	color: var(--fekete);
 }
 
 @media only screen and (orientation: portrait) {
 	#portrait_mode {
-		display: flex;
+		display: block;
 		display: -webkit-flex;
 	}
 }
