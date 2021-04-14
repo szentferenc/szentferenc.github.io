@@ -1,0 +1,273 @@
+:root {
+	/* --kiemelt: #ff9000; */
+	--kiemelt: #D4994C;
+	--fekete: #382e21;
+	--fekete-vil: #614523;
+	--feher: #ecddca;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Rajdhani";
+}
+body {
+	background-image: url("bgpattern.jpg");
+	background-repeat: repeat;
+	background-size: auto 100vh;
+}
+
+h1, h2 {
+	font: italic bold 2.5em "Rajdhani";
+	padding: 0.8em;
+	color: var(--fekete);
+}
+
+p, a {
+	padding-top: 1em;
+	font: 1.8em "Rajdhani";
+	color: var(--fekete-vil);
+	transition: 750ms;
+}
+
+a:hover {
+	color: var(--kiemelt);
+	transition: 250ms;
+}
+
+#nomove {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 65%;
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	z-index: 4;
+}
+#nomove #carlo {
+	height: 100%;
+}
+#nomove #cim {
+	margin: auto auto 1% -3%;
+	background-color: #ecddcabf;
+}
+
+button {
+	position: relative;
+	padding: 0.4em;
+	border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	transition: ease-out 250ms;
+	color: var(--fekete);
+	background-color: var(--feher);
+	border: solid 6px var(--fekete);
+	outline: none;
+	cursor: pointer;
+	display: flex;
+	display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+	font: bold 3vh "Rajdhani";
+}
+button:hover {
+	transition: ease-in 120ms;
+	color: var(--kiemelt);
+	background-color: var(--feher);
+	border: solid 6px var(--kiemelt);
+}
+button img {
+	height: 5vh;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border: solid 3px var(--fekete);
+	transition: ease-out 250ms;
+	background-color: var(--feher);
+	transform: scale(1);
+}
+button:hover img {
+	border: solid 3px var(--kiemelt);
+	transform: scale(2) translateX(-2vh);
+	transition: ease-in 120ms;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 5;
+	display: grid;
+	grid-template-rows: repeat(10, 1fr [col-start]);
+	grid-template-columns: repeat(12, 1fr [col-start]);
+	justify-items: center;
+}
+#menu button {
+	margin: 10%;
+}
+#menu #ze {
+	grid-column-start: 12;
+	grid-row-start: 1;
+	margin: 0px;
+	transform: scale(0.75);
+}
+#menu #ze img {
+	border: solid 0px var(--fekete);
+	border-radius: 0;
+	background-color: rgba(0, 0, 0, 0);
+}
+#menu #im {
+	grid-column-start: 6;
+	grid-row-start: 4;
+}
+#menu #cs {
+	grid-column-start: 9;
+	grid-row-start: 3;
+}
+#menu #ke {
+	grid-column-start: 11;
+	grid-row-start: 5;
+}
+#menu #pe {
+	grid-column-start: 7;
+	grid-row-start: 7;
+}
+#menu #el {
+	grid-column-start: 10;
+	grid-row-start: 7;
+}
+#menu #in {
+	grid-column-start: 12;
+	grid-row-start: 10;
+	margin: 0px;
+	transform: scale(0.75);
+}
+
+#bg-container {
+	margin: 10vh;
+	height: auto;
+	width: auto;
+	box-shadow: 0px 0px 13px var(--fekete);
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	z-index: 0;
+}
+
+#bg-container #bg-kep {
+	position: relative;
+	height: 80vh;
+	width: auto;
+    transform: scale(1.2);
+}
+
+#bg-container #bg-kep img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+#szovegek-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	visibility: hidden;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.95);
+	transition: all ease-in 250ms;
+	-webkit-transition: all 250ms ease-in;
+	z-index: 7;
+}
+#szovegek-container.active {
+	visibility: visible;
+	opacity: 1;
+	transition: all ease-out 250ms;
+	-webkit-transition: all 250ms ease-out;
+}
+
+#keptar {
+	display: none;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+#szovegek-container #keptar #fokep-container {
+	display: block;
+	/* vertical-align: middle; */
+	text-align: center;
+	width: 80%;
+	height: 95%;
+}
+#szovegek-container #keptar #fokep {
+	display: flex;
+	margin: auto;
+	max-height: 80%;
+	max-width: 100%;
+}
+#szovegek-container #keptar #fokep-container p {
+	color: var(--feher);
+	padding: 1em;
+}
+#keptar button {
+	margin: 5vh;
+}
+
+#szovegek {
+	position: relative;
+	display: none;
+	z-index: 8;
+	width: 90%;
+	height: 80%;
+	margin: 5%;
+	box-shadow: 0px 0px 13px var(--fekete);
+	background-color: var(--feher);
+	border-radius: 8px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+#szovegek div {
+	position: absolute;
+	top: 0;
+	display: none;
+	padding: 13vh 40vh 8vh 13vh;
+}
+#szovegek div img {
+	float: right;
+	margin: 3vh -21vh 3vh 5vh;
+	box-shadow: 0px 0px 13px var(--fekete);
+	max-height: 55vh;
+}
+#szovegek button {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 33px;
+	right: 0;
+	margin: 33px 33px auto auto;
+	z-index: 20;
+}
+
+#portrait_mode {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	display: none;
+	background-color: var(--feher);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+@media only screen and (orientation: portrait) {
+	#portrait_mode {
+		display: flex;
+		display: -webkit-flex;
+	}
+}
