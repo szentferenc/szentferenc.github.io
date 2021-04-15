@@ -121,7 +121,7 @@
 			</div>
 			<div id="peldakep">
 				<img src="img/image26.webp" alt="">
-				<h1>Carloval Acutisszal való kapcsolata</h1>
+				<h1>Carloval Acutis-val való kapcsolata</h1>
 				<p>Szüleimnek hála többször is eljuthattam Assisibe, nagyon szerettem ezt a  várost. Ha ide látogattam mindig elidőztem a Verna-hegyen, tűnődve Szent Ferenc személyén és életének üzenetén, amely a mának is szól. Többször vett itt részt lelkigyakorlatokon, a szentgyónásai után pedig szívesen fürkészte a lenyűgöző táj dombjait. Elmélkedései során sokat gondolkodott Szent Ferencről, például a stigmáiról.</p>
 				<p>Carlo nagyon sokat tudott Szent ferenc és rendtársai életéről, sokat olvasott és kérdezősködött utánuk. Nagyon jól ismerte Assisi-t - ezért is ő az útikalauzunk itt, többek között tudta, hogy Szent Ferenc tanítványaival sokat imádkozott a Subasio hegyi kolostorban. Több évszázaddal később ő maga is gyakran elmélkedett és imádkozott ott.</p>
 				<p>“ “Assisi az a hely, ahol a legboldogabbnak érzem magam!” - mondta Carlo. Csodálta Szent Ferencet a szegénysége és a természet iránti szeretete miatt. “ - részlet a Boldog Carlo Acutis: 15 év barátság Istennel c. könyvből.</p>
@@ -191,7 +191,8 @@ let html = document.querySelector("html");
 let kep = document.getElementById("bg-kep");
 let kepek = ["image12.webp", "image10.webp", "image9.webp", "image23.webp", "image7.webp", "image11.webp", "image24.webp",
 	"image20.webp", "image27.webp", "image14.webp", "image19.webp", "image17.webp", "image21.webp"];
-let kepalairas = ["Giotto di Bondone festő", "Bazilika Assisi", "az állatok védőszentje",
+let kepalairas = ["Giotto di Bondone festő", "Bazilika Assisi", "Jorge Bergoglio-ra is nagy hatással van élete, vagyis Ferenc pápára",
+	"Vállalt szegénysége napjainkban is aktuális példa", "az állatok védőszentje",
 	"Assisi Santa Maria Maggiore templom: itt helyezték végső nyugalomra boldog Carlo Acutist"];
 let aktualkep = 0;
 
@@ -243,12 +244,16 @@ function changeKep() {
 	document.getElementById("fokep-alairas").innerHTML = aktualkep + 1 + " / " + kepek.length + '\t';
 	if (aktualkep <= 6)
 		document.getElementById("fokep-alairas").innerHTML += kepalairas[0];
-	else if (aktualkep <= 10)
+	else if (aktualkep <= 8)
 		document.getElementById("fokep-alairas").innerHTML += kepalairas[1];
-	else if (aktualkep == 11)
+	else if (aktualkep == 9)
 		document.getElementById("fokep-alairas").innerHTML += kepalairas[2];
-	else
+	else if (aktualkep == 10)
 		document.getElementById("fokep-alairas").innerHTML += kepalairas[3];
+	else if (aktualkep == 11)
+		document.getElementById("fokep-alairas").innerHTML += kepalairas[4];
+	else
+		document.getElementById("fokep-alairas").innerHTML += kepalairas[5];
 }
 
 function zene() {
