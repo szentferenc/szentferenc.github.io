@@ -22,12 +22,12 @@
 	
 	<div id="menu">
 		<button onclick='zene()' id="ze"><img alt="" src="img/icon/play.webp" id="zekep">ZENE</button>
-		<button onclick='show("imadsagok")' id="im"><img alt="" src="img/icon/ima.webp">IMA</button>
-		<button onclick='show("csodak")' id="cs"><img alt="" src="img/icon/csodak.webp">LEGENDÁI</button>
+		<button onclick='show_hide("imadsagok")' id="im"><img alt="" src="img/icon/ima.webp">IMA</button>
+		<button onclick='show_hide("csodak")' id="cs"><img alt="" src="img/icon/csodak.webp">LEGENDÁI</button>
 		<button onclick='keptar()' id="ke"><img alt="" src="img/icon/keptar.webp">KÉPTÁR</button>
-		<button onclick='show("peldakep")' id="pe"><img alt="" src="img/icon/peldakep.webp">PÉLDAKÉP</button>
-		<button onclick='show("elete")' id="el"><img alt="" src="img/icon/elete.webp">ÉLETE</button>
-		<button onclick='show("info")' id="in"><img alt="" src="img/icon/info.webp">Info</button>
+		<button onclick='show_hide("peldakep")' id="pe"><img alt="" src="img/icon/peldakep.webp">PÉLDAKÉP</button>
+		<button onclick='show_hide("elete")' id="el"><img alt="" src="img/icon/elete.webp">ÉLETE</button>
+		<button onclick='show_hide("info")' id="in"><img alt="" src="img/icon/info.webp">Info</button>
 	</div>
 
 	<div id="nomove">
@@ -38,7 +38,7 @@
 	</div>
 	<div id="szovegek-container">
 		<div id="szovegek">
-			<button onclick="hidePanel()"><img src="img/icon/close.webp">Bezár</button>
+			<button onclick='show_hide("")'><img src="img/icon/close.webp">Bezár</button>
 			<div id="elete">
 				<h1>Élete</h1>
 				<p>De ki volt ez az ember?</br></p>
@@ -201,8 +201,17 @@ html.addEventListener('mousemove', (e) =>{
 	var y = (window.innerHeight / 2 - e.pageY) / 64;
 	kep.style.transform = "translateX(" + x + "px) translateY(" + y + "px) scale(1.2)";
 });
+	
+function show_hide(keres) {
+	if (keres == "")
+		hidePanel();
+	else {
+		hidePanel();
+		showPanel(keres);
+	}
+};
 
-function show(keres) {
+function showPanel(keres) {
 	document.getElementById("szovegek").style.display = "block";
 	document.getElementById("szovegek-container").classList.toggle("active");
 	document.getElementById(keres).style.display = "block";
